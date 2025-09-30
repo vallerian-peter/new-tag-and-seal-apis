@@ -1,0 +1,912 @@
+{
+	"info": {
+		"_postman_id": "decef1c5-be2f-4041-8d12-b1795bd53bd2",
+		"name": "iTag My Cattle",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "7665952",
+		"_collection_link": "https://bold-shadow-402314.postman.co/workspace/844e592c-5f73-486a-b9a4-175aacbf9f8b/collection/7665952-decef1c5-be2f-4041-8d12-b1795bd53bd2?action=share&source=collection_link&creator=7665952"
+	},
+	"item": [
+		{
+			"name": "Officer Login",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "john@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "john@gmail.com",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://itag-mycattle.apis.climbups.com/api/officer/login",
+					"protocol": "https",
+					"host": [
+						"itag-mycattle",
+						"apis",
+						"climbups",
+						"com"
+					],
+					"path": [
+						"api",
+						"officer",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Officer Verify Tag",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "john@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "john@gmail.com",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://itag-mycattle.apis.climbups.com/api/officer/login",
+					"protocol": "https",
+					"host": [
+						"itag-mycattle",
+						"apis",
+						"climbups",
+						"com"
+					],
+					"path": [
+						"api",
+						"officer",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Farmer Login",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "juma@saidi.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "juma@saidi.com",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://itag-mycattle.apis.climbups.com/api/farmer/login",
+					"protocol": "https",
+					"host": [
+						"itag-mycattle",
+						"apis",
+						"climbups",
+						"com"
+					],
+					"path": [
+						"api",
+						"farmer",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Officer Register",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "John Jackson",
+							"type": "text"
+						},
+						{
+							"key": "phone_1",
+							"value": "0715123456",
+							"type": "text"
+						},
+						{
+							"key": "phone_2",
+							"value": "0715123456",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "john@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "address",
+							"value": "123 Mtaa Street, Dar es Salaam",
+							"type": "text"
+						},
+						{
+							"key": "medical_licence_no",
+							"value": "1010101",
+							"type": "text"
+						},
+						{
+							"key": "dob",
+							"value": "1990-12-12T09:30",
+							"type": "text"
+						},
+						{
+							"key": "gender",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "id_card_type",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "id_number",
+							"value": "19901212141210000333",
+							"type": "text"
+						},
+						{
+							"key": "region",
+							"value": "2",
+							"type": "text"
+						},
+						{
+							"key": "district",
+							"value": "7",
+							"type": "text"
+						},
+						{
+							"key": "education_level",
+							"value": "1",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://itag-mycattle.apis.climbups.com/api/officer/register",
+					"protocol": "https",
+					"host": [
+						"itag-mycattle",
+						"apis",
+						"climbups",
+						"com"
+					],
+					"path": [
+						"api",
+						"officer",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Farmer Register",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "first_name",
+							"value": "Juma",
+							"type": "text"
+						},
+						{
+							"key": "surname",
+							"value": "Saidi",
+							"type": "text"
+						},
+						{
+							"key": "phone_1",
+							"value": "0715890890",
+							"type": "text"
+						},
+						{
+							"key": "phone_2",
+							"value": "0715890890",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "farmer@farmer.com",
+							"type": "text"
+						},
+						{
+							"key": "address",
+							"value": "Dar es Salaam",
+							"type": "text"
+						},
+						{
+							"key": "farmer_organization_membership",
+							"value": "FRM00222",
+							"type": "text"
+						},
+						{
+							"key": "farmer_type",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "dob",
+							"value": "1990-01-01T00:00",
+							"type": "text"
+						},
+						{
+							"key": "gender",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "id_card_type",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "id_number",
+							"value": "19900101141210000132",
+							"type": "text"
+						},
+						{
+							"key": "education_level",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "region",
+							"value": "2",
+							"type": "text"
+						},
+						{
+							"key": "district",
+							"value": "7",
+							"type": "text"
+						},
+						{
+							"key": "passport_picture",
+							"value": "null",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://itag-mycattle.apis.climbups.com/api/farmer/register",
+					"protocol": "https",
+					"host": [
+						"itag-mycattle",
+						"apis",
+						"climbups",
+						"com"
+					],
+					"path": [
+						"api",
+						"farmer",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Farmer Splash Data",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL2l0YWctbXljYXR0bGUuYXBpcy5jbGltYnVwcy5jb20vYXBpL2Zhcm1lci9sb2dpbiIsImlhdCI6MTcxNzc0NTY1OCwiZXhwIjoxNzE3NzQ5MjU4LCJuYmYiOjE3MTc3NDU2NTgsImp0aSI6InZGMW9haHd4dkpiZDZBM3kiLCJzdWIiOiIzIiwicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyJ9.m2nceiO8_AHqZv9KC8FK64OibRJNShCeU5cYkrZyP6E",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "farmer_no",
+							"value": "FM354260244",
+							"type": "text"
+						},
+						{
+							"key": "farm_id",
+							"value": "2",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://itag-mycattle.apis.climbups.com/api/farmer/splash",
+					"protocol": "https",
+					"host": [
+						"itag-mycattle",
+						"apis",
+						"climbups",
+						"com"
+					],
+					"path": [
+						"api",
+						"farmer",
+						"splash"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Officer Splash Data",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": {
+					"raw": "https://itag-mycattle.apis.climbups.com/api/officer/splash",
+					"protocol": "https",
+					"host": [
+						"itag-mycattle",
+						"apis",
+						"climbups",
+						"com"
+					],
+					"path": [
+						"api",
+						"officer",
+						"splash"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Officer Dashboard",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL2l0YWctbXljYXR0bGUuYXBpcy5jbGltYnVwcy5jb20vYXBpL29mZmljZXIvbG9naW4iLCJpYXQiOjE3MTgwOTU5MDMsImV4cCI6MTcxODA5OTUwMywibmJmIjoxNzE4MDk1OTAzLCJqdGkiOiJOdUUwcDg4UUVGdmFJNkRwIiwic3ViIjoiNCIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.TvCk2CI9P5Ztb0a_ARrONqYkUc29EU7v-GIqVzxswX8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "reg_no",
+							"value": "EXF252200784",
+							"type": "text"
+						},
+						{
+							"key": "farm_id",
+							"value": "3",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://itag-mycattle.apis.climbups.com/api/officer/dashboard",
+					"protocol": "https",
+					"host": [
+						"itag-mycattle",
+						"apis",
+						"climbups",
+						"com"
+					],
+					"path": [
+						"api",
+						"officer",
+						"dashboard"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Farmer Dashboard",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL2l0YWctbXljYXR0bGUuYXBpcy5jbGltYnVwcy5jb20vYXBpL2Zhcm1lci9sb2dpbiIsImlhdCI6MTcxODA5NTc4NSwiZXhwIjoxNzE4MDk5Mzg1LCJuYmYiOjE3MTgwOTU3ODUsImp0aSI6IkJRQnpaRmFvZTJGNnVVWFQiLCJzdWIiOiIzIiwicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyJ9.t7MPpfcF_iITmzWpwOS6PBHPh57RwLSP_nxUdzQIdA8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "farmer_no",
+							"value": "FM621134514",
+							"type": "text"
+						},
+						{
+							"key": "farm_id",
+							"value": "3",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://itag-mycattle.apis.climbups.com/api/farmer/dashboard",
+					"protocol": "https",
+					"host": [
+						"itag-mycattle",
+						"apis",
+						"climbups",
+						"com"
+					],
+					"path": [
+						"api",
+						"farmer",
+						"dashboard"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Officer Register Livestock",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL2l0YWctbXljYXR0bGUuYXBpcy5jbGltYnVwcy5jb20vYXBpL29mZmljZXIvbG9naW4iLCJpYXQiOjE3MTc0ODI2OTgsImV4cCI6MTcxNzQ4NjI5OCwibmJmIjoxNzE3NDgyNjk4LCJqdGkiOiJkYjdPcnNYdWJUSWoySldMIiwic3ViIjoiNCIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.dDF-OMdOIIwxjz2UYY1raSUwKJPbctsYV6OBn1ic9XE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL2l0YWctbXljYXR0bGUuYXBpcy5jbGltYnVwcy5jb20vYXBpL2Zhcm1lci9sb2dpbiIsImlhdCI6MTcxNzI1NDYxMSwiZXhwIjoxNzE3MjU4MjExLCJuYmYiOjE3MTcyNTQ2MTEsImp0aSI6InJhNVZNeTRKV0dpWFY3bE4iLCJzdWIiOiIzIiwicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyJ9.Rhg87lQQgz1CE9k9ekz60-GBZoRIciXPgB_yGepC3nc",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "reg_no",
+							"value": "EXF878518712",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "farm_id",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "officer_id",
+							"value": "2",
+							"type": "text"
+						},
+						{
+							"key": "name",
+							"value": "Mtoto Wa Tatu",
+							"type": "text"
+						},
+						{
+							"key": "nida",
+							"value": "244ABHIIYALEO123123",
+							"type": "text"
+						},
+						{
+							"key": "livestock_type",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "specie",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "breed",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "dob",
+							"value": "2022-04-15",
+							"type": "text"
+						},
+						{
+							"key": "gender",
+							"value": "2",
+							"type": "text"
+						},
+						{
+							"key": "livestock_stage",
+							"value": "2",
+							"type": "text"
+						},
+						{
+							"key": "farm_tag",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "animal_picture",
+							"type": "file",
+							"src": "/C:/Users/HP/Pictures/Screenshots/Screenshot 2024-06-01 172313.png",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "https://itag-mycattle.apis.climbups.com/api/officer/register_livestock",
+					"protocol": "https",
+					"host": [
+						"itag-mycattle",
+						"apis",
+						"climbups",
+						"com"
+					],
+					"path": [
+						"api",
+						"officer",
+						"register_livestock"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Farmer Create Farm",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL2l0YWctbXljYXR0bGUuYXBpcy5jbGltYnVwcy5jb20vYXBpL2Zhcm1lci9sb2dpbiIsImlhdCI6MTcxNzc0NTY1OCwiZXhwIjoxNzE3NzQ5MjU4LCJuYmYiOjE3MTc3NDU2NTgsImp0aSI6InZGMW9haHd4dkpiZDZBM3kiLCJzdWIiOiIzIiwicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyJ9.m2nceiO8_AHqZv9KC8FK64OibRJNShCeU5cYkrZyP6E",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL2l0YWctbXljYXR0bGUuYXBpcy5jbGltYnVwcy5jb20vYXBpL2Zhcm1lci9sb2dpbiIsImlhdCI6MTcxNzI1NDYxMSwiZXhwIjoxNzE3MjU4MjExLCJuYmYiOjE3MTcyNTQ2MTEsImp0aSI6InJhNVZNeTRKV0dpWFY3bE4iLCJzdWIiOiIzIiwicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyJ9.Rhg87lQQgz1CE9k9ekz60-GBZoRIciXPgB_yGepC3nc",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "farmer_no",
+							"value": "FM621134514",
+							"type": "text"
+						},
+						{
+							"key": "name",
+							"value": "Shamba Lingine",
+							"type": "text"
+						},
+						{
+							"key": "latitudes",
+							"value": "-6.25",
+							"type": "text"
+						},
+						{
+							"key": "longitudes",
+							"value": "39.39",
+							"type": "text"
+						},
+						{
+							"key": "physical_address",
+							"value": "Dar es Salaam",
+							"type": "text"
+						},
+						{
+							"key": "livestock_type",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "size",
+							"value": "2",
+							"type": "text"
+						},
+						{
+							"key": "size_unit",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "region",
+							"value": "2",
+							"type": "text"
+						},
+						{
+							"key": "district",
+							"value": "7",
+							"type": "text"
+						},
+						{
+							"key": "legal_status",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "regional_registration_number",
+							"value": "6670",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://itag-mycattle.apis.climbups.com/api/farmer/register_farm",
+					"protocol": "https",
+					"host": [
+						"itag-mycattle",
+						"apis",
+						"climbups",
+						"com"
+					],
+					"path": [
+						"api",
+						"farmer",
+						"register_farm"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Farmer Assign Officer",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL2l0YWctbXljYXR0bGUuYXBpcy5jbGltYnVwcy5jb20vYXBpL2Zhcm1lci9sb2dpbiIsImlhdCI6MTcxNzMxMTU2OSwiZXhwIjoxNzE3MzE1MTY5LCJuYmYiOjE3MTczMTE1NjksImp0aSI6ImxmcEU4QmV4MEhOTmxrNEgiLCJzdWIiOiIzIiwicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyJ9.oGlPKNDbT8ltYKZpjCqeX1hLeLlObvc_h-ljOgM-JgA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL2l0YWctbXljYXR0bGUuYXBpcy5jbGltYnVwcy5jb20vYXBpL2Zhcm1lci9sb2dpbiIsImlhdCI6MTcxNzI1NDYxMSwiZXhwIjoxNzE3MjU4MjExLCJuYmYiOjE3MTcyNTQ2MTEsImp0aSI6InJhNVZNeTRKV0dpWFY3bE4iLCJzdWIiOiIzIiwicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyJ9.Rhg87lQQgz1CE9k9ekz60-GBZoRIciXPgB_yGepC3nc",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "farmer_no",
+							"value": "FM621134514",
+							"type": "text"
+						},
+						{
+							"key": "farm_id",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "officer_id",
+							"value": "2",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://itag-mycattle.apis.climbups.com/api/farmer/assign_farm_officer",
+					"protocol": "https",
+					"host": [
+						"itag-mycattle",
+						"apis",
+						"climbups",
+						"com"
+					],
+					"path": [
+						"api",
+						"farmer",
+						"assign_farm_officer"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
