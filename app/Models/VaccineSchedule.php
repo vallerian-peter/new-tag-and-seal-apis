@@ -11,8 +11,7 @@ class VaccineSchedule extends Model
 
     protected $fillable = [
         'name',
-        'description',
-        'interval_days',
+        'color',
     ];
 
     public function vaccines()

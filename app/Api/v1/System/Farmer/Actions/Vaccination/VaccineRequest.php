@@ -4,7 +4,7 @@ namespace App\Api\v1\System\Farmer\Actions\Vaccination;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class RegisterVaccineRequest extends FormRequest
+class VaccineRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.

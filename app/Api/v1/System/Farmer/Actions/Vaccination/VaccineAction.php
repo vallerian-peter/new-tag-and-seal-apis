@@ -15,11 +15,11 @@ use Illuminate\Support\Facades\Log;
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Foundation\Http\FormRequest;
-use App\Api\v1\System\Farmer\Actions\Vaccination\RegisterVaccineRequest;
+use App\Api\v1\System\Farmer\Actions\Vaccination\VaccineRequest;
 
 class VaccineAction
 {
-    public static function handle(RegisterVaccineRequest $request)
+    public static function handle(VaccineRequest $request)
     {
         // Validate the request data
         $validated = $request->validated();
