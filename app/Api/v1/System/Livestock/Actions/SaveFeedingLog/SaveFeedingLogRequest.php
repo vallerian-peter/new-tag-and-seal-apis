@@ -27,7 +27,11 @@ class SaveFeedingLogRequest extends FormRequest
             'livestockId' => 'required',
             'feedTypeId' => 'required',
             'date' => 'required',
-            'remarks'=>'required'
+            'remarks'=>'required',
+            'uuid' => 'nullable|string',
+            'reference_no' => 'nullable|string',
+            'device_id' => 'nullable|string',
+            'original_created_at' => 'nullable|date',
         ];
     }
 }

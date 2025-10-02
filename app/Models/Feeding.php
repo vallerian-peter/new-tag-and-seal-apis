@@ -22,6 +22,10 @@ class Feeding extends Model
             'updated_by',
             'state_id',
             'created_at',
-            'updated_at'
+            'updated_at',
+            'sync_status',
+            'device_id',
+            'original_created_at',
+            'last_modifi'
     ];
 }

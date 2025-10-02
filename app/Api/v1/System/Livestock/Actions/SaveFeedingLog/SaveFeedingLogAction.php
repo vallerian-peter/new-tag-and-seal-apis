@@ -52,7 +52,8 @@ class SaveFeedingLogAction
 
             //save feeding log
             $save = Feeding::create([
-                'reference_no'=> 'FD'.hrtime()[1],
+                'uuid' => $request->uuid ?? \Illuminate\Support\Str::uuid(),
+                'reference_no'=> $request->reference_no ?? 'FD'.hrtime()[1],
                 'farm_id'=> $request->farmId,
                 'livestock_id' =>$request->livestockId,
                 'feeding_type_id'=> $request->feedTypeId,
@@ -61,6 +62,10 @@ class SaveFeedingLogAction
                 'remarks'=>$request->remarks,
                 'created_by' => $user->id,
                 'state_id' => State::ACTIVE,
+                'sync_status' => 'synced',
+                'device_id' => $request->device_id ?? null,
+                'original_created_at' => $request->original_created_at ?? Carbon::now('Africa/Dar_es_Salaam'),
+                'last_modified_at' => Carbon::now('Africa/Dar_es_Salaam'),
                 'created_at' => Carbon::now('Africa/Dar_es_Salaam')
             ]);
             if (!$save) {
