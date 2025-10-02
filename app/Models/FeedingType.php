@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class FeedingType extends Model
 {
     use HasFactory;
+
+    protected $table = 'feeding_types';
+
+    protected $fillable = [
+        'name',
+        'color',
+    ];
 }

@@ -65,6 +65,7 @@ class FarmerSplashAction
             $medicine = Medicine::select('id','name')->get();
             $administrationRoutes = AdministrationRoute::select('id','name')->get();
             $feedType = FeedingType::select('id','name')->get();
+            $feedingTypes = FeedingType::select('id','name','color')->get();
             $disposalType = AnimalDisposalType::select('id','name')->get();
             $legalStatus = LegalStatus::select('id','name')->get();
             $sizeUnit = SizeUnit::select('id','name')->get();
@@ -103,6 +104,7 @@ class FarmerSplashAction
                 'medicines' => $medicine,
                 'administrationRoutes'=> $administrationRoutes,
                 'feedType'=> $feedType,
+                'feedingTypes'=> $feedingTypes,
                 'disposalType'=> $disposalType,
                 'legalStatus'=>$legalStatus,
                 'sizeUnit'=>$sizeUnit,

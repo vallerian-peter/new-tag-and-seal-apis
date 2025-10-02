@@ -14,7 +14,8 @@ class GetVaccinationLogsAction
         //get livestock for the farm
         $livestocks = FarmLivestock::where('farm_id', $request->farmId)
             ->join('livestocks', 'livestocks.id', '=', 'farm_livestocks.livestock_id')
-            ->select('livestocks.id','livestocks.identification_number','livestocks.name')
+            ->leftJoin('genders', 'genders.id', '=', 'livestocks.gender_id')
+            ->select('livestocks.id','livestocks.identification_number','livestocks.name', 'livestocks.gender_id', 'genders.name as gender_name')
             ->get();
 
         if(count($livestocks) > 0){
@@ -24,6 +25,8 @@ class GetVaccinationLogsAction
                 $livestocks[$i]['id'] = $livestock->id;
                 $livestocks[$i]['identification_number'] = $livestock->identification_number;
                 $livestocks[$i]['name'] = $livestock->name;
+                $livestocks[$i]['gender_id'] = $livestock->gender_id;
+                $livestocks[$i]['gender_name'] = $livestock->gender_name;
 
                 // Get vaccination logs with relationships
                 $vaccinations = Vaccination::where('livestock_id', $livestocks[$i]['id'])

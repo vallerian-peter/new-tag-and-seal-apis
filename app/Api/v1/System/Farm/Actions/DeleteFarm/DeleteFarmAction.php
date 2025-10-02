@@ -4,17 +4,18 @@ namespace App\Api\v1\System\Farm\Actions\DeleteFarm;
 
 use App\Models\Farm;
 use App\Models\FarmLivestock;
+use App\Models\FarmUser;
 use App\Models\Vaccination;
 use App\Models\Milking;
 use App\Models\Feeding;
-use App\Models\Pregnancy;
+use App\Models\PregnancyDiagnosis;
 use App\Models\Calving;
 use App\Models\Medication;
-use App\Models\Insemination;
+use App\Models\LivestockInseminations;
 use App\Models\Deworming;
-use App\Models\Weight;
+use App\Models\WeightGain;
 use App\Models\DryingOff;
-use App\Models\Disposal;
+use App\Models\AnimalDisposal;
 use Illuminate\Support\Facades\DB;
 
 class DeleteFarmAction
@@ -56,7 +57,7 @@ class DeleteFarmAction
                 Feeding::whereIn('livestock_id', $farmLivestockIds)->delete();
 
                 // Delete pregnancy logs
-                Pregnancy::whereIn('livestock_id', $farmLivestockIds)->delete();
+                PregnancyDiagnosis::whereIn('livestock_id', $farmLivestockIds)->delete();
 
                 // Delete calving logs
                 Calving::whereIn('livestock_id', $farmLivestockIds)->delete();
@@ -65,36 +66,44 @@ class DeleteFarmAction
                 Medication::whereIn('livestock_id', $farmLivestockIds)->delete();
 
                 // Delete insemination logs
-                Insemination::whereIn('livestock_id', $farmLivestockIds)->delete();
+                LivestockInseminations::whereIn('livestock_id', $farmLivestockIds)->delete();
 
                 // Delete deworming logs
                 Deworming::whereIn('livestock_id', $farmLivestockIds)->delete();
 
                 // Delete weight logs
-                Weight::whereIn('livestock_id', $farmLivestockIds)->delete();
+                WeightGain::whereIn('livestock_id', $farmLivestockIds)->delete();
 
                 // Delete drying off logs
                 DryingOff::whereIn('livestock_id', $farmLivestockIds)->delete();
 
                 // Delete disposal logs
-                Disposal::whereIn('livestock_id', $farmLivestockIds)->delete();
+                AnimalDisposal::whereIn('livestock_id', $farmLivestockIds)->delete();
 
                 // Delete farm-livestock relationships
                 FarmLivestock::where('farm_id', $farm->id)->delete();
             }
 
-            // Delete farm-specific logs
-            Vaccination::where('farm_id', $farm->id)->delete();
-            Milking::where('farm_id', $farm->id)->delete();
+            // Delete farm-specific logs (vaccinations are linked through livestock)
+            // Get vaccination IDs for this farm's livestock
+            $vaccinationIds = Vaccination::whereIn('livestock_id', $farmLivestockIds)->pluck('id');
+            Vaccination::whereIn('id', $vaccinationIds)->delete();
+
+            // Delete milkings (linked through livestock)
+            Milking::whereIn('livestock_id', $farmLivestockIds)->delete();
             Feeding::where('farm_id', $farm->id)->delete();
-            Pregnancy::where('farm_id', $farm->id)->delete();
+            PregnancyDiagnosis::where('farm_id', $farm->id)->delete();
             Calving::where('farm_id', $farm->id)->delete();
             Medication::where('farm_id', $farm->id)->delete();
-            Insemination::where('farm_id', $farm->id)->delete();
+            LivestockInseminations::whereIn('livestock_id', $farmLivestockIds)->delete();
             Deworming::where('farm_id', $farm->id)->delete();
-            Weight::where('farm_id', $farm->id)->delete();
+            WeightGain::where('farm_id', $farm->id)->delete();
             DryingOff::where('farm_id', $farm->id)->delete();
-            Disposal::where('farm_id', $farm->id)->delete();
+            AnimalDisposal::where('farm_id', $farm->id)->delete();
+
+            // Finally delete the farm
+            // Detach/delete farm users assigned to this farm
+            FarmUser::where('farm_id', $farm->id)->delete();
 
             // Finally delete the farm
             $farm->delete();

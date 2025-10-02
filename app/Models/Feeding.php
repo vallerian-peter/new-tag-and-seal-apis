@@ -10,6 +10,7 @@ class Feeding extends Model
     use HasFactory;
 
     protected $fillable = [
+            'uuid',
             'reference_no',
             'farm_id',
             'livestock_id',
