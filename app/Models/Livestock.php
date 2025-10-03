@@ -12,6 +12,9 @@ class Livestock extends Model
 
     protected $fillable = [
         'identification_number',
+        'dummy_tag_id',
+        'barcode_tag_id',
+        'rfid_tag_id',
         'livestock_type_id',
         'name',
         'date_of_birth',
@@ -30,7 +33,8 @@ class Livestock extends Model
         'updated_by',
         'livestock_status_id',
         'created_at',
-        'updated_at'
+        'updated_at',
+        'uuid'
     ];
 
     public function gender()

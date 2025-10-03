@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\SyncController;
 use App\Http\Controllers\Api\ComprehensiveSyncController;
+use App\Http\Controllers\Api\EnhancedSyncController;
 
 /*
 |--------------------------------------------------------------------------
@@ -104,6 +105,14 @@ Route::middleware(['auth:sanctum'])->group(function () {
         Route::post('/resolve-conflicts', [ComprehensiveSyncController::class, 'resolveConflicts']);
         Route::get('/health', [ComprehensiveSyncController::class, 'healthCheck']);
     });
+
+    // Enhanced sync endpoints (for Flutter comprehensive sync with farms and livestock)
+    Route::prefix('sync/enhanced')->group(function () {
+        Route::post('/sync-multiple', [EnhancedSyncController::class, 'syncMultiple']);
+        Route::post('/fetch-data', [EnhancedSyncController::class, 'fetchData']);
+        Route::get('/statistics', [EnhancedSyncController::class, 'getStatistics']);
+        Route::get('/health', [EnhancedSyncController::class, 'healthCheck']);
+    });
 });
 
 // Public endpoints for testing (no authentication required)
@@ -112,7 +121,13 @@ Route::prefix('sync/public')->group(function () {
     Route::get('/statistics', [ComprehensiveSyncController::class, 'getStatistics']);
     Route::post('/upload', [ComprehensiveSyncController::class, 'upload']);
     Route::post('/download', [ComprehensiveSyncController::class, 'download']);
-    Route::post('/resolve-conflicts', [ComprehensiveSyncController::class, 'resolveConflicts']);
+Route::post('/resolve-conflicts', [ComprehensiveSyncController::class, 'resolveConflicts']);
+
+    // Enhanced sync public endpoints for testing
+    Route::get('/enhanced/health', [EnhancedSyncController::class, 'healthCheck']);
+    Route::get('/enhanced/statistics', [EnhancedSyncController::class, 'getStatistics']);
+    Route::post('/enhanced/sync-multiple', [EnhancedSyncController::class, 'syncMultiple']);
+    Route::post('/enhanced/fetch-data', [EnhancedSyncController::class, 'fetchData']);
 });
 
 // Legacy sync endpoints (for backward compatibility)

@@ -12,7 +12,7 @@ class Farm extends Model
     protected $fillable = [
         'reference_no', 'name', 'size', 'size_unit_id', 'latitudes', 'longitudes', 'physical_address', 'created_at', 'updated_at', 'livestock_type_id',
         'street_id', 'village_id', 'ward_id', 'division_id', 'district_id', 'region_id', 'country_id', 'created_by', 'updated_by', 'farm_status_id',
-        'legal_status_id', 'regional_reg_no','gps'
+        'legal_status_id', 'regional_reg_no','gps', 'uuid'
     ];
 
     public function street()

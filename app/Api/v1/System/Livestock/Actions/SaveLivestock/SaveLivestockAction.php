@@ -83,6 +83,9 @@ class SaveLivestockAction
 
     private static function saveLivestock($request)
     {
+        // Generate UUID for conflict-free sync
+        $uuid = $request->uuid ?? \Illuminate\Support\Str::uuid()->toString();
+
         //save livestock
         $data = [
             'identification_number' => $request->nida,
@@ -94,6 +97,7 @@ class SaveLivestockAction
             'breed_id' => $request->breed,
             'species_id' => $request->specie,
             'created_by' => $request->user()->id,
+            'uuid' => $uuid,
             'created_at' => Carbon::now()
         ];
 

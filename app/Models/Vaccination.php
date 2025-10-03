@@ -19,7 +19,10 @@ class Vaccination extends Model
         'vet_id',
         'extension_officer_id',
         'created_by',
+        'updated_by',
         'vaccination_status_id',
+        'created_at',
+        'updated_at',
         // Sync fields
         'uuid',
         'last_modified_at',

@@ -48,24 +48,28 @@ class SaveFarmAction
                 return ['status' => false, 'code' => 100, 'message' => 'Farm information already registered', 'data' => []];
             }
 
-            //save farm
-            $save = Farm::create([
-                'reference_no' => 'RN' . hrtime()[1],
-                'regional_reg_no' => $request->regional_registration_number,
-                'name' => htmlspecialchars($request->name ?? ''),
-                'physical_address' => htmlspecialchars($request->physical_address ?? ''),
-                'size' => $request->size,
-                'size_unit_id' => $request->size_unit,
-                'gps' => $request->gps,
-                'country_id' => Country::TANZANIA,
-                'region_id' => $request->region,
-                'district_id' => $request->district,
-                'ward_id' => $request->ward,
-                'created_by' => $farmerUser->id,
-                'farm_status_id' => FarmStatus::ACTIVE,
-                'legal_status_id' => $request->legal_status,
-                'created_at' => Carbon::now()
-            ]);
+      // Generate UUID for conflict-free sync
+      $uuid = $request->uuid ?? \Illuminate\Support\Str::uuid()->toString();
+
+      //save farm
+      $save = Farm::create([
+          'reference_no' => 'RN' . hrtime()[1],
+          'regional_reg_no' => $request->regional_registration_number,
+          'name' => htmlspecialchars($request->name ?? ''),
+          'physical_address' => htmlspecialchars($request->physical_address ?? ''),
+          'size' => $request->size,
+          'size_unit_id' => $request->size_unit,
+          'gps' => $request->gps,
+          'country_id' => Country::TANZANIA,
+          'region_id' => $request->region,
+          'district_id' => $request->district,
+          'ward_id' => $request->ward,
+          'created_by' => $farmerUser->id,
+          'farm_status_id' => FarmStatus::ACTIVE,
+          'legal_status_id' => $request->legal_status,
+          'uuid' => $uuid,
+          'created_at' => Carbon::now()
+      ]);
 
             if (!$save) {
                 DB::rollBack();

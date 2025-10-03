@@ -6,22 +6,34 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class WeightGain extends Model
+class LivestockInsemination extends Model
 {
     use HasFactory, SoftDeletes;
+
+    protected $table = 'livestock_inseminations';
 
     protected $fillable = [
         'uuid',
         'reference_no',
-        'farm_id',
         'livestock_id',
-        'weight',
-        'weight_gain',
-        'weight_gain_unit_id',
-        'remarks',
+        'serial',
+        'last_heat_date',
+        'current_heat_type_id',
+        'insemination_date',
+        'insemination_service_id',
+        'insemination_semen_straw_type_id',
+        'bull_code',
+        'bull_breed',
+        'semen_production_date',
+        'production_country',
+        'semen_batch_number',
+        'international_id',
+        'ai_code',
+        'manufacturer_name',
+        'semen_supplier',
+        'state_id',
         'created_by',
         'updated_by',
-        'state_id',
         'created_at',
         'updated_at',
         'last_modified_at',
@@ -32,6 +44,9 @@ class WeightGain extends Model
 
     protected $dates = [
         'deleted_at',
+        'last_heat_date',
+        'insemination_date',
+        'semen_production_date',
     ];
 
     /**

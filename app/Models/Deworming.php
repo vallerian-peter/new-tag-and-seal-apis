@@ -26,6 +26,8 @@ class Deworming extends Model
         'created_by',
         'updated_by',
         'state_id',
+        'created_at',
+        'updated_at',
         // Sync fields
         'uuid',
         'last_modified_at',
